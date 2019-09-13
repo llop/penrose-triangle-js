@@ -23,7 +23,7 @@ To use `penrose-triangle-js`, just import the script and set up the animation lo
     penroseTriangle.render();
     requestAnimationFrame(renderLoop);
   } 
-  // start the animation the when page loads
+  // start the animation when the page loads
   window.onload = () => {
     let canvas = document.getElementById('penrose-canvas');
     penroseTriangle = new PenroseTrinagle(canvas);
@@ -56,4 +56,4 @@ The default options are:
 
 ## License
 
-`penrose-triangle-js` is resealsed under the MIT License.See [LICENSE](LICENSE) for details.
+`penrose-triangle-js` is resealsed under the MIT License. See [LICENSE](LICENSE) for details.

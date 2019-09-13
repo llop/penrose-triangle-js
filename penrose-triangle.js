@@ -27,7 +27,7 @@ class PenroseTrinagle {
     
     // prepare graphics context
     this.canvas = canvas;
-    this.context = this.canvas[0].getContext('2d');
+    this.context = this.canvas.getContext('2d');
     this.context.lineJoin = 'round';
     this.context.lineWidth = this.lineWidth;
     this.context.strokeStyle = this.lineColor;
@@ -104,7 +104,7 @@ class PenroseTrinagle {
   
   render() {
     // clear canvas
-    this.context.clearRect(0, 0, this.canvas.width(), this.canvas.height());
+    this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
     
     // calculate cube positions and draw
     this.updateCubesPositions();
@@ -203,35 +203,6 @@ class PenroseTrinagle {
   }
   
 }
-
-
-var penroseTriangle;
-
-function renderLoop() {
-  penroseTriangle.render();
-  requestAnimationFrame(renderLoop);
-}
-
-$(() => {
-  penroseTriangle = new PenroseTrinagle($('#penrose-canvas')[0]);
-  renderLoop();
-});
-
-
-/*
-var penroseTriangle;
-
-function renderLoop() {
-  penroseTriangle.render();
-  requestAnimationFrame(renderLoop);
-} 
-
-window.onload = () => {
-  let canvas = document.getElementById('penrose-canvas');
-  penroseTriangle = new PenroseTrinagle(canvas);
-  renderLoop();
-};
-*/
 
 
 
