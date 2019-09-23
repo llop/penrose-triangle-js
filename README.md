@@ -12,22 +12,16 @@ A `canvas` is required to display the animation.
 <canvas id='penrose-canvas' width='400' height='350'></canvas>
 ```
 
-To use `penrose-triangle-js`, just import the script and set up the animation loop.
+To use `penrose-triangle-js`, just import the script and start the animation.
 
 ```
 <script src='penrose-triangle.js'></script>
 <script>
-  var penroseTriangle;
-  // render the triangle 1 frame at a time
-  function renderLoop() {
-    penroseTriangle.render();
-    requestAnimationFrame(renderLoop);
-  } 
   // start the animation when the page loads
   window.onload = () => {
-    let canvas = document.getElementById('penrose-canvas');
-    penroseTriangle = new PenroseTrinagle(canvas);
-    renderLoop();
+    const canvas = document.getElementById('penrose-canvas');
+    const penroseTriangle = new PenroseTrinagle(canvas);
+    penroseTriangle.start();
   };
 </script>
 ```
@@ -41,7 +35,7 @@ The default options are:
 {
   triangleEdge: 300,        // length of triangle's edge in pixels
   cubeEdge: 30,             // length of cube's edge in pixels
-  cubesPerTriangleEdge: 6,  // # of cuber per triangle edge
+  cubesPerTriangleEdge: 6,  // # of cubes per triangle edge
   padding: [ 50.5, 0.5 ],   // top and left padding in pixels
   loopFrames: 100,          // # of frames per loop
   lineWidth: 3,             // cube line's width in pixels

@@ -80,19 +80,19 @@ class PenroseTrinagle {
       this.v[j++] = va[0] + inc * i;
       this.v[j++] = va[1];
     }
-    let vdir = [                                                      // right side Euclidean vector
+    let vdir = [                                                      // right edge Euclidean vector
         (vc[0] - vb[0]) / this.cubesPerTriangleEdge, 
         (vc[1] - vb[1]) / this.cubesPerTriangleEdge 
       ];
-    for (let i = 0; i < this.cubesPerTriangleEdge; ++i) {             // right side
+    for (let i = 0; i < this.cubesPerTriangleEdge; ++i) {             // right edge
       this.v[j++] = vb[0] + vdir[0] * i;
       this.v[j++] = vb[1] + vdir[1] * i;  
     }
-    vdir = [                                                          // left side vector
+    vdir = [                                                          // left edge vector
         (va[0] - vc[0]) / this.cubesPerTriangleEdge, 
         (va[1] - vc[1]) / this.cubesPerTriangleEdge 
       ];
-    for (let i = 0; i < this.cubesPerTriangleEdge; ++i) {             // left side
+    for (let i = 0; i < this.cubesPerTriangleEdge; ++i) {             // left edge
       this.v[j++] = vc[0] + vdir[0] * i;
       this.v[j++] = vc[1] + vdir[1] * i;
     }
@@ -102,16 +102,28 @@ class PenroseTrinagle {
     }
   }
   
+  
   render() {
-    // clear canvas
-    this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
-    
-    // calculate cube positions and draw
+    // calculate cube positions 
     this.updateCubesPositions();
+    
+    // clear canvas and draw
+    this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
     this.drawTriangle();
     
     // increment current frame
     if (++this.frame == this.loopFrames) this.frame = 0;
+  }
+  
+  // 'renderLoop()' is invoked at every repaint
+  renderLoop() {
+    this.render();
+    requestAnimationFrame(() => { this.renderLoop(); });
+  }
+  
+  // call 'start()' to begin the animation
+  start() {
+    this.renderLoop();
   }
   
   
@@ -129,11 +141,11 @@ class PenroseTrinagle {
       this.vt[j] = this.v[j++] + inc;
       this.vt[j] = this.v[j++];
     }
-    for (let i = 0; i < this.cubesPerTriangleEdge; ++i) {             // right side
+    for (let i = 0; i < this.cubesPerTriangleEdge; ++i) {             // right edge
       this.vt[j] = this.v[j++] + inc1X;
       this.vt[j] = this.v[j++] + inc1Y;
     }
-    for (let i = 0; i < this.cubesPerTriangleEdge; ++i) {             // left side
+    for (let i = 0; i < this.cubesPerTriangleEdge; ++i) {             // left edge
       this.vt[j] = this.v[j++] + inc2X;
       this.vt[j] = this.v[j++] + inc2Y;   
     }  
