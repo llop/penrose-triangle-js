@@ -8,13 +8,13 @@ this project provides an optical illusion consisting of several cubes that move 
 
 A `canvas` is required to display the animation.
 
-```
+```html
 <canvas id='penrose-canvas' width='400' height='350'></canvas>
 ```
 
 To use `penrose-triangle-js`, just import the script and start the animation.
 
-```
+```html
 <script src='penrose-triangle.js'></script>
 <script>
   // start the animation when the page loads
@@ -31,7 +31,7 @@ To use `penrose-triangle-js`, just import the script and start the animation.
 It is possible to customize the animation by providing an `options` object to the `PenroseTriangle` constructor. 
 The default options are:
 
-```
+```javascript
 {
   triangleEdge: 300,        // length of triangle's edge in pixels
   cubeEdge: 30,             // length of cube's edge in pixels
