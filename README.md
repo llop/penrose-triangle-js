@@ -4,6 +4,17 @@ penrose-triangle-js
 Drawing inspiration from the [Penrose triangle](https://en.wikipedia.org/wiki/Penrose_triangle), 
 this project provides an optical illusion consisting of several cubes that move along an impossible triangular path.
 
+<script src='penrose-triangle.js'></script>
+<script>
+  // start the animation when the page loads
+  window.onload = () => {
+    const canvas = document.getElementById('penrose-canvas');
+    const penroseTriangle = new PenroseTrinagle(canvas);
+    penroseTriangle.start();
+  };
+</script>
+<div style='width: 100%; margin: 0 auto;'><canvas id='penrose-canvas' width='400' height='350'></canvas></div>
+
 ## Getting started
 
 A `canvas` is required to display the animation.
