@@ -116,14 +116,14 @@ class PenroseTrinagle {
   }
   
   // 'renderLoop()' is invoked at every repaint
-  renderLoop() {
+  renderLoop = timestamp => {
     this.render();
-    requestAnimationFrame(() => { this.renderLoop(); });
+    requestAnimationFrame(this.renderLoop);
   }
   
   // call 'start()' to begin the animation
   start() {
-    this.renderLoop();
+    requestAnimationFrame(this.renderLoop);
   }
   
   
