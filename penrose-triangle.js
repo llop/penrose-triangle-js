@@ -115,7 +115,7 @@ class PenroseTrinagle {
     if (++this.frame == this.loopFrames) this.frame = 0;
   }
   
-  // 'renderLoop()' is invoked at every repaint
+  // 'renderLoop(timestamp)' is invoked at every repaint
   renderLoop = timestamp => {
     this.render();
     requestAnimationFrame(this.renderLoop);
