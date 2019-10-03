@@ -52,4 +52,4 @@ The default options are:
 
 ## License
 
-`penrose-triangle-js` is resealsed under the MIT License. See [LICENSE](LICENSE) for details.
+`penrose-triangle-js` is released under the MIT License. See [LICENSE](LICENSE) for details.
