@@ -1,0 +1,25 @@
+{
+  "name": "penrose-triangle-js",
+  "version": "1.0.0",
+  "description": "An animated Penrose triangle for your browser.",
+  "main": "penrose-triangle.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/llop/penrose-triangle-js.git"
+  },
+  "keywords": [
+    "penrose-triangle",
+    "animation",
+    "front-end",
+    "web"
+  ],
+  "author": "Albert Lobo <albertlobo1981@yahoo.es> (http://www.albertlobo.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/llop/penrose-triangle-js/issues"
+  },
+  "homepage": "https://github.com/llop/penrose-triangle-js#readme"
+}
