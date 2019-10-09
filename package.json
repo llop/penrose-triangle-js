@@ -1,6 +1,6 @@
 {
   "name": "penrose-triangle-js",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "An animated Penrose triangle for your browser.",
   "main": "penrose-triangle.js",
   "scripts": {
