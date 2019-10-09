@@ -7,14 +7,16 @@ this project provides an optical illusion consisting of several cubes that move 
 
 ![Image](penrose-triangle.png)
 
-## Getting started
+## Quick start
 
 Options to add `penrose-triangle-js` to your project:
 * Install with [npm](https://npmjs.org): `npm install penrose-triangle-js`
 * [Download the latest release](https://github.com/llop/penrose-triangle-js/archive/master.zip)
 * Clone the repo: `git clone https://github.com/llop/penrose-triangle-js.git`
 
-A `canvas` is required to display the animation.
+## Basic use
+
+In the HTML file, a `canvas` is required to display the animation.
 
 ```html
 <canvas id='penrose-canvas' width='400' height='350'></canvas>
